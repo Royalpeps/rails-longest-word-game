@@ -1,0 +1,20 @@
+<style type ="text/css">
+li {
+  list-style: none;
+}
+</style>
+
+
+
+<h1>Pages#score</h1>
+<p>Find me in app/views/pages/score.html.erb</p>
+
+<h2>The result is...</h2>
+<p>
+  <ul>
+    <li>Time:<%= @result[:time] %></li>
+    <li>Trans:<%= @result[:translation] %></li>
+    <li>Score:<%= @result[:score] %></li>
+    <li><strong><%= @result[:message] %></strong>!</li>
+  </ul>
+</p>

@@ -1,0 +1,25 @@
+<h1>Pages#game</h1>
+<!-- <p>Find me in app/views/pages/game.html.erb</p> -->
+
+<%= session[:n_of_attempt] %> times
+
+<% start_time= Time.now %>
+<H2>start time: <%= start_time %></H2>
+<p>start time(i): <%= start_time.to_i %></p>
+
+<H2>This is a grid!</H2>
+<p>
+  <% @grid.each do |letter| %>
+    <%= letter %>
+  <% end %>
+</p>
+
+
+<H2>Input your answer!</H2>
+<form action="/score" method="get">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="guess">
+  <input type="hidden" name="start_time" value='<%= start_time.to_i %>'>
+  <input type="hidden" name="grid" value='<%= @grid.join %>'>
+  <input type="submit">
+</form>
